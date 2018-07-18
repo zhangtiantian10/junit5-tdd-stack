@@ -1,5 +1,13 @@
 const reference = [{key: 3, value: 'Fizz'}, {key: 5, value: 'Buzz'}, {key: 7, value: 'Whizz'}];
 
+const numberGame = () => {
+    let i = 1;
+    while (i <= 120) {
+        console.log(judgeNumber(i));
+        i++;
+    }
+}
+
 const judgeNumber = (number) => {
 
     const output = reference.filter(element => isIncludes(number, element.key) || isMultiple(number, element.key))
@@ -16,8 +24,4 @@ const isIncludes = (number, referenceNumber) => {
     return number.toString().includes(referenceNumber);
 }
 
-console.log(judgeNumber(15))
-console.log(judgeNumber(70))
-console.log(judgeNumber(21))
-console.log(judgeNumber(105))
-console.log(judgeNumber(1))
+numberGame();
